@@ -1,0 +1,14 @@
+#!bin
+mongod -dbpath "C:/MongoDB/data/db" -logpath "C:/MongoDB/data/log/mon.log"
+
+#!bin/mongo.exe
+show dbs
+use myDB
+db.stats()
+db.dropDatabase()
+
+db.createCollection('myCo', {capped:true, size:6142800, max:10000})
+db.getCollectionNames()
+db.myCo.drop()
+
+

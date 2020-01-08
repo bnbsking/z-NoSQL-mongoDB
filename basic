@@ -8,7 +8,13 @@ db.stats()
 db.dropDatabase()
 
 db.createCollection('myCo', {capped:true, size:6142800, max:10000})
-db.getCollectionNames()
+db.getCollectionNames(); show collections
 db.myCo.drop()
+db.myCo.renameCollection('myCo2')
+
+db.myCo.insert({'name':'bobo'})
+db.myCo.insert([ {'a':1,'b':2}, {'c':3} ])
+db.myCo.insert({'_id':10, 'item':'box', 'qty':20})  //_id: primary key
+db.myCo.find()
 
 
